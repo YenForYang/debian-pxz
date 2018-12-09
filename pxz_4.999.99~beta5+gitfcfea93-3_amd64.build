@@ -1,0 +1,75 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck
+dpkg-buildpackage: info: source package pxz
+dpkg-buildpackage: info: source version 4.999.99~beta5+gitfcfea93-3
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Holger Levsen <holger@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_auto_clean
+	make -j8 distclean
+make[1]: Entering directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+rm -f *.o pxz
+rm -f *~
+make[1]: Leaving directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+   dh_clean
+FAKEROOTKEY=657729087 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j8
+make[1]: Entering directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+icc -o pxz -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE pxz.c  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -llzma -DPXZ_BUILD_DATE=\"20180530\" -DPXZ_VERSION=\"4.999.9beta\"
+icc: warning #10237: -lcilkrts linked in dynamically, static library not available
+make[1]: Leaving directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_auto_install
+	make -j8 install DESTDIR=/home/richard/debs/pxz/test/pxz-4.999.99\~beta5\+gitfcfea93/debian/pxz AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+mkdir -p /home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93/debian/pxz/usr/bin
+cp pxz /home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93/debian/pxz/usr/bin
+mkdir -p /home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93/debian/pxz/usr/share/man/man1
+cp pxz.1 /home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93/debian/pxz/usr/share/man/man1
+make[1]: Leaving directory '/home/richard/debs/pxz/test/pxz-4.999.99~beta5+gitfcfea93'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/pxz/usr/bin/pxz was not linked against libdl.so.2 (it uses none of the library's symbols)
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'pxz' in '../pxz_4.999.99~beta5+gitfcfea93-3_amd64.deb'.
+dpkg-deb: building package 'pxz-dbgsym' in '../pxz-dbgsym_4.999.99~beta5+gitfcfea93-3_amd64.deb'.
+FAKEROOTKEY=2057702275 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../pxz_4.999.99~beta5+gitfcfea93-3_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian pxz_4.999.99~beta5+gitfcfea93-3_amd64.changes ...
+W: pxz: hardening-no-pie usr/bin/pxz
+Finished running lintian.

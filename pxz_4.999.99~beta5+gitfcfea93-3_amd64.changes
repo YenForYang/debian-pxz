@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 30 May 2018 23:16:50 +0000
+Source: pxz
+Binary: pxz
+Built-For-Profiles: nobiarch nocheck
+Architecture: amd64
+Version: 4.999.99~beta5+gitfcfea93-3
+Distribution: unstable
+Urgency: medium
+Maintainer: Holger Levsen <holger@debian.org>
+Changed-By: Holger Levsen <holger@debian.org>
+Description:
+ pxz        - parallel LZMA compressor using liblzma
+Changes:
+ pxz (4.999.99~beta5+gitfcfea93-3) unstable; urgency=medium
+ .
+   * debian/control: switch packaging to salsa.debian.org. Thanks to the alioth
+     admins for providing such a nice service so long!
+   * Bump Standards-Version to 4.1.4, no changes needed.
+Checksums-Sha1:
+ 71a1e91b9e87ff291a35c1ece87142b9fe469bb6 11236 pxz-dbgsym_4.999.99~beta5+gitfcfea93-3_amd64.deb
+ a3618c48875f4575dbac3c58a0dc87be4c5177b0 5379 pxz_4.999.99~beta5+gitfcfea93-3_amd64.buildinfo
+ f92567c3f79d0ef00a258d27cc0b103445db1049 16976 pxz_4.999.99~beta5+gitfcfea93-3_amd64.deb
+Checksums-Sha256:
+ 3eede1a8231c85ab97361679855c9f427c326715fd10fe5898272fd548e7fdb0 11236 pxz-dbgsym_4.999.99~beta5+gitfcfea93-3_amd64.deb
+ af6a592b2d87d08fbd85b50d87b7a55d1303b3b7a59cdb4b8d998897ba45e97f 5379 pxz_4.999.99~beta5+gitfcfea93-3_amd64.buildinfo
+ a803c7efcb9f6ee32bb3fcfb23b88183bf0b0bd786ef057fad29911a21e1d091 16976 pxz_4.999.99~beta5+gitfcfea93-3_amd64.deb
+Files:
+ c3cfa74d7c498e95b4a5c7809fbbc6a4 11236 debug optional pxz-dbgsym_4.999.99~beta5+gitfcfea93-3_amd64.deb
+ ab7ac3d30dab5adbc5a73471745821a7 5379 misc optional pxz_4.999.99~beta5+gitfcfea93-3_amd64.buildinfo
+ fc46dba758ddadf3d5de8bb1eee16015 16976 misc optional pxz_4.999.99~beta5+gitfcfea93-3_amd64.deb

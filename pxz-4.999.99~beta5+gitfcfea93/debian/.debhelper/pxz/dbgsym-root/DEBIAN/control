@@ -1,0 +1,12 @@
+Package: pxz-dbgsym
+Source: pxz
+Version: 4.999.99~beta5+gitfcfea93-3
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Holger Levsen <holger@debian.org>
+Installed-Size: 29
+Depends: pxz (= 4.999.99~beta5+gitfcfea93-3)
+Section: debug
+Priority: optional
+Description: debug symbols for pxz
+Build-Ids: 4da048bd2227b8ed997f1bcbb78b1cafc14ed677
